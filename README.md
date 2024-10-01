@@ -1,54 +1,50 @@
-İstanbulKart Dolum Noktaları ve Güzergah Planlayıcı
-Bu proje, İstanbul'da yolculuk sırasında kullanıcılara en uygun güzergahları, alternatif yolları ve en yakın İstanbulKart dolum noktalarını sunmak amacıyla geliştirilmiştir. Kullanıcılar, web sitesi üzerinden eşzamanlı olarak güncellenen verilerle en güncel dolum noktalarını kolayca bulabilirler. Proje, zaman ve enerji tasarrufu sağlamaya yönelik olup, toplu taşıma kullanımını teşvik etmektedir.
+Bu proje, İstanbul'daki İstanbulKart dolum noktalarını harita üzerinde görüntülemeye ve kullanıcıların en yakın dolum noktasını bulmasına olanak sağlar. Kullanıcılar, ilçe bazında dolum noktalarını filtreleyebilir ve seçilen iki nokta arasında en kısa rota üzerinden hareket edebilir.
+
+Proje Amacı
+Bu uygulamanın amacı, kullanıcıların en yakın İstanbulKart dolum noktalarına hızlıca ulaşmalarını sağlamaktır. Harita tabanlı arayüz sayesinde, kullanıcılar güzergahları görüntüleyebilir ve trafik yoğunluğunu azaltıcı şekilde toplu taşıma kullanımını teşvik edebilir.
 
 Özellikler
-Başlangıç ve Bitiş Noktası Seçimi: Harita üzerinde yolculuğa başlanacak ve bitirilecek noktalar işaretlenebilir.
-Güzergah Alternatifleri: Ana güzergah dışında, alternatif güzergah senaryoları üretilir.
-Dolum Noktası Güzergahı: En yakın dolum noktası en optimize yol üzerinden işaretlenir.
-Yazılı Güzergah Gösterimi: Harita dışında, metinsel olarak da güzergah bilgileri sağlanır.
-İlçe Seçimi: Kullanıcılar, spesifik bir ilçedeki dolum noktalarına erişebilirler.
-Proje Yapısı
-1. Flask Framework
-Projenin web servisleri ile etkileşime geçmek ve verileri kullanıcıya sunmak için Flask kullanılmıştır. Flask, esnek yapısı ve kolay kullanımı sayesinde projede tercih edilmiştir.
+İlçeye göre dolum noktalarını listeleme
+Harita üzerinde en yakın dolum noktalarını gösterme
+Başlangıç ve bitiş noktaları arasındaki en kısa rotayı hesaplama
+Rotaların Google Maps üzerinde görselleştirilmesi
+Tüm ilçelerdeki dolum noktalarını tek tıkla gösterme
+Kullanılan Teknolojiler
+Flask (Python): Uygulama sunucusunu oluşturmak ve veri işlemek için kullanıldı.
+Google Maps API: Harita üzerinde dolum noktalarını ve rotaları göstermek için kullanıldı.
+HTML, CSS, JavaScript: Kullanıcı arayüzünü geliştirmek ve Google Maps entegrasyonu için kullanıldı.
+MySQL: Dolum noktaları ve ilçeler hakkındaki verilerin saklandığı veritabanı olarak kullanıldı.
+Kurulum ve Kullanım
+Gereksinimler:
+Python 3.x
 Flask
-
-2. MySQL Veritabanı
-Veritabanı yönetim sistemi olarak MySQL kullanılmıştır. Otobüs hatları, duraklar ve dolum noktalarının verilerini saklamak ve yönetmek için kullanılmıştır.
-MySQL
-
-3. Google Maps API
-Harita üzerinde otobüs duraklarını ve dolum noktalarını göstermek için Google Maps API kullanılmıştır.
-Google Maps API
-
-4. HTML, CSS ve JavaScript
-Frontend tarafında kullanıcı arayüzünü oluşturmak için HTML, CSS ve JavaScript kullanılmıştır.
-
-Veri Toplama ve İşleme
-Veri Toplama: İstanbul Büyükşehir Belediyesi Açık Veri Portalı üzerinden İstanbulKart Dolum Noktaları verilerine erişildi.
-Veri İşleme: Veriler, İstanbul'un ilçelerine göre kategorize edildi ve analiz edildi.
-Veri Temizleme: Verilerdeki aykırı değerler ve yanlış konumlar temizlendi.
-Kurulum
-Projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları izleyebilirsiniz:
-
-Depoyu Kopyalayın:
+MySQL Veritabanı
+Google Maps API Anahtarı
+Kurulum Adımları:
+Bu depoyu bilgisayarınıza klonlayın:
 
 bash
-Copy code
-git clone https://github.com/kullanici-adi/proje-adi.git
-cd proje-adi
-Gerekli Bağımlılıkları Yükleyin:
+Kodu kopyala
+git clone https://github.com/kullanici-adi/istanbulkart-dolum.git
+cd istanbulkart-dolum
+Gerekli bağımlılıkları yükleyin:
 
 bash
-Copy code
+Kodu kopyala
 pip install -r requirements.txt
-Veritabanı Kurulumu:
+MySQL veritabanınızı yapılandırın ve config.py dosyasındaki ayarları düzenleyin.
 
-MySQL üzerinde veritabanınızı oluşturun ve gerekli tabloları oluşturmak için schema.sql dosyasını çalıştırın.
+Google Maps API anahtarınızı index.html dosyasındaki script etiketine ekleyin.
 
-Çevresel Değişkenleri Ayarlayın:
+Uygulamayı çalıştırın:
 
-.env dosyasını oluşturun ve aşağıdaki bilgileri ekleyin:
+bash
+Kodu kopyala
+python app.py
+Tarayıcınızda http://localhost:5000 adresine giderek uygulamayı kullanmaya başlayın.
 
+Katkıda Bulunma
+Katkıda bulunmak istiyorsanız lütfen bir pull request açın. Sorunları bildirmek için issue kısmını kullanabilirsiniz.
 env
 Copy code
 FLASK_APP=app.py
