@@ -4,12 +4,15 @@ Proje Amacı
 Bu uygulamanın amacı, kullanıcıların en yakın İstanbulKart dolum noktalarına hızlıca ulaşmalarını sağlamaktır. Harita tabanlı arayüz sayesinde, kullanıcılar güzergahları görüntüleyebilir ve trafik yoğunluğunu azaltıcı şekilde toplu taşıma kullanımını teşvik edebilir.
 
 Özellikler
+
 İlçeye göre dolum noktalarını listeleme
 Harita üzerinde en yakın dolum noktalarını gösterme
 Başlangıç ve bitiş noktaları arasındaki en kısa rotayı hesaplama
 Rotaların Google Maps üzerinde görselleştirilmesi
 Tüm ilçelerdeki dolum noktalarını tek tıkla gösterme
+
 Kullanılan Teknolojiler
+
 Flask (Python): Uygulama sunucusunu oluşturmak ve veri işlemek için kullanıldı.
 Google Maps API: Harita üzerinde dolum noktalarını ve rotaları göstermek için kullanıldı.
 HTML, CSS, JavaScript: Kullanıcı arayüzünü geliştirmek ve Google Maps entegrasyonu için kullanıldı.
@@ -21,13 +24,24 @@ Flask
 MySQL Veritabanı
 Google Maps API Anahtarı
 
+Test Araçları ve İzleme
+Bu proje için çeşitli test ve izleme araçları kullanılmıştır:
+
+Apache JMeter: Performans testi yapmak için kullanıldı. Farklı yük seviyelerinde uygulamanın ne kadar hızlı ve kararlı çalıştığı test edildi.
+OWASP ZAP: Uygulamanın güvenlik açıklarını taramak için kullanıldı. Bu araçla, olası güvenlik zafiyetleri test edildi ve raporlandı.
+Postman: API'lerin doğruluğunu ve işlevselliğini test etmek için kullanıldı. Postman ile her bir API isteği manuel olarak test edilip yanıtlar incelendi.
+Grafana ile İzleme
+Proje ayrıca Prometheus ve Grafana kullanılarak izlenmiştir:
+
+Prometheus: Uygulamanın CPU, bellek kullanımı gibi metriklerini toplamak için kullanıldı.
+Grafana: Toplanan metrikler, Grafana üzerinde görselleştirildi ve uygulamanın performansı sürekli olarak takip edildi.
+Bu araçlar ile hem uygulamanın işlevsel testleri, hem de performans ve güvenlik açısından izlemesi gerçekleştirildi.
+
 Kurulum Adımları:
 Bu depoyu bilgisayarınıza klonlayın:
 
-
 git clone https://github.com/MustafaSenliik/istanbulkart-dolum-noktalari-bulucu.git
 cd istanbulkart-dolum-noktalari-bulucu
-
 
 Gerekli bağımlılıkları yükleyin:
 pip install -r requirements.txt
